@@ -13,8 +13,11 @@ TOKEN = '6146700564:AAFFESLVvY077_3b952WH88pY3rG3r-_Gc8'
 # get updates
 #https://api.telegram.org/bot6146700564:AAFFESLVvY077_3b952WH88pY3rG3r-_Gc8/getUpdates
 
-# Webhook
+# Webhook Local
 #https://api.telegram.org/bot6146700564:AAFFESLVvY077_3b952WH88pY3rG3r-_Gc8/setWebhook?url=
+
+# Webhook Heroku
+#https://api.telegram.org/bot6146700564:AAFFESLVvY077_3b952WH88pY3rG3r-_Gc8/setWebhook?url=https://rossmann-telegram-bot-felpcm.herokuapp.com/
         
 # send message
 #https://api.telegram.org/bot6146700564:AAFFESLVvY077_3b952WH88pY3rG3r-_Gc8/sendMessage?chat_id=1710967440&text= Hi Felipe, I am doing good, thanks
@@ -31,8 +34,8 @@ def send_message(chat_id, text):
 
 def load_dataset(store_id):
     #loading test dataset
-    df10 = pd.read_csv('C:/Users/felii/OneDrive/Documentos/GitHub/DS-em-Producao/data/test.csv')
-    df_store_raw = pd.read_csv('C:/Users/felii/OneDrive/Documentos/GitHub/DS-em-Producao/data/store.csv')
+    df10 = pd.read_csv('test.csv')
+    df_store_raw = pd.read_csv('store.csv')
 
     #merge test dataset + store
     df_test = pd.merge(df10, df_store_raw, how='left', on='Store')
@@ -91,9 +94,9 @@ def index():
         
         chat_id, store_id = parse_message(message)
            
-        if store_id!=error:
+        if store_id!='error':
             #loading data
-            data = load_dataset(data)
+            data = load_dataset(store_id)
             
             if data!='error':
                 #prediction
@@ -124,4 +127,5 @@ def index():
         return '<h1> Rossmann Telegram BOT </h1>'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = os.environ.get('PORT', 5000)
+    app.run(host='0.0.0.0', port=port)
