@@ -1,6 +1,6 @@
 # Previsão de vendas para a Rossmann Drugstore
 
-![rossmann](img/rossmann)
+![rossmann](img/rossmann.jpg)
 
 # 1 - INTRODUÇÃO
 ## 1.1 - Sobre a Rossmann Drugstore
@@ -46,7 +46,7 @@ As seguintes features são encontradas no dataset:
 Para o desenvolvimento do projeto foi utilizada um processo cíclico chamado CRISP-DS (Cross-Industry Standard Process - Data Science). A ideia principal é percorrer as fases do processo, para que você tenha, de forma ágil, um produto mínimo viável a agregar ao negócio. Depois de percorrer o primeiro ciclo, você pode iterar novamente, encontrar novos insights, criar novas features, melhorar o modelo, ajustar parâmetros, a fim de a precisão e entregar mais valor. O ciclo pode ser repetido quantas vezes forem necessárias até atingir o objetivo final do time de negócio.
 
 ***Etapas do método CRISP-DS***
-![CRISP-DS](img/crisp-ds)
+![CRISP-DS](img/crisp-ds.jpg)
 
 
 ## 2.2 - Desenvolvimento da Solução
@@ -68,7 +68,7 @@ Vale ressaltar quais são os três elementos que constituem o mapa mental de hip
 - AGENTES -> Entidades que impactam o fenômeno (ex.: clientes, lojas, produtos)
 - ATRIBUTOS DO AGENTE -> São os atributos que descrevem o agente (ex.: para o agente "cliente" temos os atributos idade, escolaridade, salário, etc.)
 
-![MAPA MENTAL DE HIPÓTESES](img/MindMapHypothesis)
+![MAPA MENTAL DE HIPÓTESES](img/MindMapHypothesis.png)
 
 ***Passo 03 - Filtragem das Variáveis:***
 
@@ -81,7 +81,7 @@ O objetivo primordial desta etapa foi conduzir uma exploração minuciosa dos da
 Para cada tipo de análise, utilizaram-se diversas técnicas e ferramentas estatísticas. Histogramas foram empregados para examinar a distribuição das variáveis, enquanto boxplots foram utilizados para analisar o intervalo e detectar possíveis valores atípicos. A matriz de confusão foi empregada para medir a correlação entre as variáveis, assim como o método de Kramer's V e outros métodos apropriados. Além disso, nesta fase, as hipóteses estabelecidas na etapa anterior foram testadas e confirmadas ou refutadas.
 
 Adicionalmente, as features (variáveis) foram ordenadas de acordo com sua relevância para o modelo, proporcionando uma compreensão mais clara de quais características têm um impacto mais significativo nos resultados finais.
-[Matriz de Confusão]!(img/matriz-confusao)
+![Matriz de Confusão]!(img/matriz-confusao.png)
 
 # 3 - INSIGHTS E RESULTADOS
 
