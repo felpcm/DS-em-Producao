@@ -68,6 +68,7 @@ Vale ressaltar quais são os três elementos que constituem o mapa mental de hip
 - AGENTES -> Entidades que impactam o fenômeno (ex.: clientes, lojas, produtos)
 - ATRIBUTOS DO AGENTE -> São os atributos que descrevem o agente (ex.: para o agente "cliente" temos os atributos idade, escolaridade, salário, etc.)
 
+***Mapa Mental de Hipóteses***
 ![MAPA MENTAL DE HIPÓTESES](img/MindMapHypothesis.png)
 
 ***Passo 03 - Filtragem das Variáveis:***
@@ -81,7 +82,9 @@ O objetivo primordial desta etapa foi conduzir uma exploração minuciosa dos da
 Para cada tipo de análise, utilizaram-se diversas técnicas e ferramentas estatísticas. Histogramas foram empregados para examinar a distribuição das variáveis, enquanto boxplots foram utilizados para analisar o intervalo e detectar possíveis valores atípicos. A matriz de confusão foi empregada para medir a correlação entre as variáveis, assim como o método de Kramer's V e outros métodos apropriados. Além disso, nesta fase, as hipóteses estabelecidas na etapa anterior foram testadas e confirmadas ou refutadas.
 
 Adicionalmente, as features (variáveis) foram ordenadas de acordo com sua relevância para o modelo, proporcionando uma compreensão mais clara de quais características têm um impacto mais significativo nos resultados finais.
-![Matriz de Confusão]!(img/matriz-confusao.png)
+
+***Matriz de Confusão***
+![Matriz de Confusão](img/matriz-confusao.png)
 
 # 3 - INSIGHTS E RESULTADOS
 
