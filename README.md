@@ -155,6 +155,33 @@ Após a aplicação dos hiperparâmetros, obtivemos o modelo final com as seguin
 
 Essas métricas representam a avaliação do desempenho final do modelo, indicando a qualidade das previsões feitas pelo XGBoost Regressor com os hiperparâmetros selecionados.
 
+***Passo 09 - Tradução e interpretação de erros:***
+
+O objetivo desta etapa é apresentar os resultados do projeto, analisar e estudar as métricas de erro utilizadas e verificar se o modelo está subestimando ou superestimando suas previsões. Além disso, os resultados do modelo são disponibilizados à equipe de negócios utilizando valores monetários, percentuais e indicadores que representam os melhores e piores cenários.
+
+A tabela apresenta uma amostra dos resultados da previsão do modelo para lojas selecionadas aleatoriamente, expressos em moeda corrente. Nela, podemos observar as previsões, os piores cenários e os melhores cenários para cada loja, bem como as métricas de erro MAE (Erro Absoluto Médio) e MAPE (Erro Percentual Absoluto Médio).
+
+Exemplo do resultado da predição do modelo para lojas escolhidas de forma aleatória (em moeda corrente):
+
+*Amostra do resultado da predição do modelo de lojas escolhidas de forma aleatória (em moeda corrente):*
+|store |	predictions |	worst_scenario |	best_scenario |	MAE |	MAPE |
+| --- | --- | --- | --- |  --- | --- |
+|292 |	$ 107049.78 |	$ 47101.90 |	$ 166997.66 |	59947.88 |	0.56 |
+|909 |	$ 240251.45 |	$ 117723.21 |	$ 362779.69 |	122528.24 |	0.51 |
+|876 |	$ 200402.56 |	$ 146293.87 |	$ 254511.25 |	54108.69 |	0.27 |
+|595 |	$ 385042.84 |	$ 281081.28 |	$ 489004.41 |	103961.57 |	0.27 |
+|722 |	$ 348247.47 |	$ 257703.13 |	$ 438791.81 |	90544.34 |	0.26 |
+
+Além disso, é apresentada uma tabela que representa a amostra do desempenho total do modelo, ou seja, a previsão da soma de todas as lojas nos melhores e piores cenários, de acordo com o modelo.
+
+| scenarios |	values |
+| --- | --- |
+| predictions |	$284,637,024.00 |
+| worst_scenario |	$259,103,458.74 |
+| best_scenario |	$310,170,585.45 |
+
+Esses valores fornecem uma visão geral do desempenho do modelo, considerando diferentes cenários, e são úteis para a equipe de negócios avaliar o impacto das previsões no contexto financeiro.
+
 # 3 - INSIGHTS E RESULTADOS
 
 # 4 -  CONCLUSÃO
