@@ -122,11 +122,11 @@ Na tabela de "Single Performance", podemos observar as métricas de desempenho (
 Single Performance:
 | Model Name |	MAE |	MAPE |	RMSE |
 |  --- | --- | --- | --- |
-|	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
-|	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
+|	Average Model |	1354.800353 |	0.206400 |	1835.135542 |
 |	Linear Regression |	1867.089774 |	0.292694 |	2671.049215 |
 |	Linear Regression - Lasso |	1891.704881 |	0.289106 |	2744.451737 |
-|	XGboost Regressor |	6685.509529 |	0.949034 |	7337.089204 |
+|	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
+| XGboost Regressor |	905.006642 |	0.132421 |	1319.485362 |
 
 Real Performance:
 | Model Name |	MAE CV |	MAPE CV |	RMSE CV |
@@ -134,9 +134,26 @@ Real Performance:
 |	Linear Regression |	2081.73 +/- 295.63 |	0.3 +/- 0.02 |	2952.52 +/- 468.37 |
 |	Lasso |	2116.38 +/- 341.5 |	0.29 +/- 0.01 |	3057.75 +/- 504.26 |
 |	Random Forest Regressor |	836.61 +/- 217.1 |	0.12 +/- 0.02 |	1254.3 +/- 316.17 |
-|	XGBoost Regressor |	7053.23 +/- 594.13 |	0.95 +/- 0.0 |	7724.0 +/- 695.19 |
+|	XGBoost Regressor |	1063.61 +/- 174.46 |	0.15 +/- 0.01 |	1536.41 +/- 244.66 |
 
 Com base nas métricas de desempenho e considerando outros fatores, como o tempo de processamento, foi tomada a decisão de escolher o modelo XGBoost. Apesar do tempo de processamento menor em comparação ao Random Forest, o XGBoost apresentou um desempenho aceitável e a possibilidade de ajustes significativos na etapa de Hyperparameter Fine Tuning para melhorar ainda mais sua performance. Além disso, a escolha do XGBoost também levou em consideração a redução de custos de processamento e armazenamento em nuvem.
+
+***Passo 08 - Hyperparameters Fine Tuning:***
+
+Nesta etapa, foram analisados três métodos de ajuste fino de hiperparâmetros: Random Search, Grid Search e Bayesian Search. A decisão de utilizar o Random Search foi baseada em considerações de tempo de processamento, pois este método é o mais rápido entre os três. Além disso, foram levados em conta os custos relacionados, uma vez que o uso do Random Search com 5 iterações de validação cruzada (kfolds) exigiu várias horas de processamento. Em um ambiente corporativo, isso se traduziria em custos com serviços em nuvem, por exemplo.
+
+Outro ponto importante é destacar a natureza iterativa do método CRISP (Cross Industry Standard Process for Data Mining), que permite a alteração do método de ajuste fino e até mesmo a troca do modelo de machine learning selecionado em iterações posteriores.
+
+O resultado dessa etapa do código é a obtenção de uma nova combinação aleatória de hiperparâmetros para ser utilizada na criação do modelo a cada iteração do loop. Isso é especialmente útil em problemas de ciência de dados quando se deseja testar diversas combinações de hiperparâmetros para encontrar a que melhor se ajusta aos dados e, assim, obter o melhor desempenho do modelo.
+
+Apesar das possibilidades oferecidas pelo Random Search, após executar o algoritmo várias vezes, foram feitas modificações manuais para melhor adequação devido às limitações do hardware utilizado e, posteriormente, da plataforma Heroku.
+
+Após a aplicação dos hiperparâmetros, obtivemos o modelo final com as seguintes métricas de desempenho:
+| Model Name | MAE | MAPE | RMSE |
+|  --- | --- | --- | --- |
+| XGBoost Regressor | 623.21075 | 0.090444 | 908.960607 |
+
+Essas métricas representam a avaliação do desempenho final do modelo, indicando a qualidade das previsões feitas pelo XGBoost Regressor com os hiperparâmetros selecionados.
 
 # 3 - INSIGHTS E RESULTADOS
 
