@@ -107,7 +107,7 @@ Na modelagem foram realizados os treinamentos dos modelos de machine learning se
  Na primeira parte da etapa foi realizado a avaliação simples do modelo (Single Performance) e na segunda parte foi aplicado o método de Cross Validation (Real Performance). O método de validação cruzada consiste em separar os dados de teste em dois conjuntos: conjunto de teste e o menor de validação, após treinar e medir o desempenho do modelo esses dois conjuntos são redimensionados de forma a testar e validar o modelo em todas as porções dos dados.
 
 Single Performance:
-| Model Name |	MAE	MAPE |	RMSE |
+| Model Name |	MAE |	MAPE |	RMSE |
 |  --- | --- | --- | --- |
 |	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
 |	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
