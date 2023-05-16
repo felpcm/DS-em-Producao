@@ -111,7 +111,7 @@ Single Performance:
 |  --- | --- | --- | --- |
 |	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
 |	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
-|	Linear Regression |	1867.089774	0.292694	2671.049215 |
+|	Linear Regression |	1867.089774 |	0.292694 |	2671.049215 |
 |	Linear Regression - Lasso |	1891.704881 |	0.289106 |	2744.451737 |
 |	XGboost Regressor |	6685.509529 |	0.949034 |	7337.089204 |
 
