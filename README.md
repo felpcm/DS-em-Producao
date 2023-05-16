@@ -122,11 +122,11 @@ Na tabela de "Single Performance", podemos observar as métricas de desempenho (
 Single Performance:
 | Model Name |	MAE |	MAPE |	RMSE |
 |  --- | --- | --- | --- |
-|	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
-|	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
+|	Average Model |	1354.800353 |	0.206400 |	1835.135542 |
 |	Linear Regression |	1867.089774 |	0.292694 |	2671.049215 |
 |	Linear Regression - Lasso |	1891.704881 |	0.289106 |	2744.451737 |
-|	XGboost Regressor |	6685.509529 |	0.949034 |	7337.089204 |
+|	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
+| XGboost Regressor |	905.006642 |	0.132421 |	1319.485362 |
 
 Real Performance:
 | Model Name |	MAE CV |	MAPE CV |	RMSE CV |
@@ -134,9 +134,72 @@ Real Performance:
 |	Linear Regression |	2081.73 +/- 295.63 |	0.3 +/- 0.02 |	2952.52 +/- 468.37 |
 |	Lasso |	2116.38 +/- 341.5 |	0.29 +/- 0.01 |	3057.75 +/- 504.26 |
 |	Random Forest Regressor |	836.61 +/- 217.1 |	0.12 +/- 0.02 |	1254.3 +/- 316.17 |
-|	XGBoost Regressor |	7053.23 +/- 594.13 |	0.95 +/- 0.0 |	7724.0 +/- 695.19 |
+|	XGBoost Regressor |	1063.61 +/- 174.46 |	0.15 +/- 0.01 |	1536.41 +/- 244.66 |
 
 Com base nas métricas de desempenho e considerando outros fatores, como o tempo de processamento, foi tomada a decisão de escolher o modelo XGBoost. Apesar do tempo de processamento menor em comparação ao Random Forest, o XGBoost apresentou um desempenho aceitável e a possibilidade de ajustes significativos na etapa de Hyperparameter Fine Tuning para melhorar ainda mais sua performance. Além disso, a escolha do XGBoost também levou em consideração a redução de custos de processamento e armazenamento em nuvem.
+
+***Passo 08 - Hyperparameters Fine Tuning:***
+
+Nesta etapa, foram analisados três métodos de ajuste fino de hiperparâmetros: Random Search, Grid Search e Bayesian Search. A decisão de utilizar o Random Search foi baseada em considerações de tempo de processamento, pois este método é o mais rápido entre os três. Além disso, foram levados em conta os custos relacionados, uma vez que o uso do Random Search com 5 iterações de validação cruzada (kfolds) exigiu várias horas de processamento. Em um ambiente corporativo, isso se traduziria em custos com serviços em nuvem, por exemplo.
+
+Outro ponto importante é destacar a natureza iterativa do método CRISP (Cross Industry Standard Process for Data Mining), que permite a alteração do método de ajuste fino e até mesmo a troca do modelo de machine learning selecionado em iterações posteriores.
+
+O resultado dessa etapa do código é a obtenção de uma nova combinação aleatória de hiperparâmetros para ser utilizada na criação do modelo a cada iteração do loop. Isso é especialmente útil em problemas de ciência de dados quando se deseja testar diversas combinações de hiperparâmetros para encontrar a que melhor se ajusta aos dados e, assim, obter o melhor desempenho do modelo.
+
+Apesar das possibilidades oferecidas pelo Random Search, após executar o algoritmo várias vezes, foram feitas modificações manuais para melhor adequação devido às limitações do hardware utilizado e, posteriormente, da plataforma Heroku.
+
+Após a aplicação dos hiperparâmetros, obtivemos o modelo final com as seguintes métricas de desempenho:
+| Model Name | MAE | MAPE | RMSE |
+|  --- | --- | --- | --- |
+| XGBoost Regressor | 623.21075 | 0.090444 | 908.960607 |
+
+Essas métricas representam a avaliação do desempenho final do modelo, indicando a qualidade das previsões feitas pelo XGBoost Regressor com os hiperparâmetros selecionados.
+
+***Passo 09 - Tradução e interpretação de erros:***
+
+O objetivo desta etapa é apresentar os resultados do projeto, analisar e estudar as métricas de erro utilizadas e verificar se o modelo está subestimando ou superestimando suas previsões. Além disso, os resultados do modelo são disponibilizados à equipe de negócios utilizando valores monetários, percentuais e indicadores que representam os melhores e piores cenários.
+
+A tabela apresenta uma amostra dos resultados da previsão do modelo para lojas selecionadas aleatoriamente, expressos em moeda corrente. Nela, podemos observar as previsões, os piores cenários e os melhores cenários para cada loja, bem como as métricas de erro MAE (Erro Absoluto Médio) e MAPE (Erro Percentual Absoluto Médio).
+
+Exemplo do resultado da predição do modelo para lojas escolhidas de forma aleatória (em moeda corrente):
+
+*Amostra do resultado da predição do modelo de lojas escolhidas de forma aleatória (em moeda corrente):*
+|store |	predictions |	worst_scenario |	best_scenario |	MAE |	MAPE |
+| --- | --- | --- | --- |  --- | --- |
+|292 |	$ 107049.78 |	$ 47101.90 |	$ 166997.66 |	59947.88 |	0.56 |
+|909 |	$ 240251.45 |	$ 117723.21 |	$ 362779.69 |	122528.24 |	0.51 |
+|876 |	$ 200402.56 |	$ 146293.87 |	$ 254511.25 |	54108.69 |	0.27 |
+|595 |	$ 385042.84 |	$ 281081.28 |	$ 489004.41 |	103961.57 |	0.27 |
+|722 |	$ 348247.47 |	$ 257703.13 |	$ 438791.81 |	90544.34 |	0.26 |
+
+Além disso, é apresentada uma tabela que representa a amostra do desempenho total do modelo, ou seja, a previsão da soma de todas as lojas nos melhores e piores cenários, de acordo com o modelo.
+
+| scenarios |	values |
+| --- | --- |
+| predictions |	$284,637,024.00 |
+| worst_scenario |	$259,103,458.74 |
+| best_scenario |	$310,170,585.45 |
+
+***Previsão x Vendas reais***
+![graficops](img/predxsell.png)
+
+Esses valores fornecem uma visão geral do desempenho do modelo, considerando diferentes cenários, e são úteis para a equipe de negócios avaliar o impacto das previsões no contexto financeiro.
+
+***Passo 10 - Deploy do modelo em produção:***
+
+Após o êxito na execução do modelo, o próximo passo é publicá-lo em um ambiente de nuvem, permitindo que outras pessoas ou serviços utilizem os resultados para aprimorar as decisões de negócios. Nesse caso, a escolha foi criar uma API utilizando a plataforma de nuvem Heroku. Os seguintes passos foram seguidos para realizar essa tarefa:
+
+1. Salvamento do modelo treinado: O modelo, já treinado e ajustado com os hiperparâmetros finais, é salvo para que não seja necessário realizar esse processo no ambiente de produção. Dessa forma, o modelo pode ser carregado diretamente na API sem a necessidade de repetir todo o processo de treinamento.
+
+2. Criação de uma classe encapsuladora: Uma classe é criada com métodos para limpeza, transformação, codificação e predição dos dados. Essa classe é responsável por encapsular o funcionamento do aplicativo, fornecendo uma interface simplificada para o processamento dos dados de entrada e obtenção das previsões do modelo.
+
+3. Desenvolvimento de uma aplicação em Flask: É criada uma aplicação utilizando o framework Flask, que atua como o controlador da arquitetura da API. Essa aplicação recebe as requisições dos usuários, encaminha os dados para o modelo processar e retorna as respostas por meio de uma resposta (response) apropriada.
+
+4. Estruturação das pastas e arquivos de configuração: A estrutura de diretórios necessária para a aplicação é criada, juntamente com os arquivos de configuração relevantes. Esses arquivos incluem informações como as dependências do projeto, configurações de ambiente e demais detalhes necessários para o correto funcionamento da API.
+
+5. Publicação na plataforma Heroku: Após a conclusão dos passos anteriores, a aplicação é publicada na plataforma de nuvem Heroku. Isso envolve o envio dos arquivos e configurações para a ferramenta de cloud e a configuração adequada do ambiente para hospedar e disponibilizar a API.
+
+Esses passos permitem que o modelo treinado seja acessado de forma rápida e eficiente por meio da API, possibilitando que outras pessoas ou serviços utilizem seus resultados para tomar decisões de negócios mais informadas. A utilização da plataforma Heroku facilita o processo de implantação e disponibilização da API em um ambiente de nuvem confiável e escalável.
 
 # 3 - INSIGHTS E RESULTADOS
 
