@@ -201,6 +201,19 @@ Após o êxito na execução do modelo, o próximo passo é publicá-lo em um am
 
 Esses passos permitem que o modelo treinado seja acessado de forma rápida e eficiente por meio da API, possibilitando que outras pessoas ou serviços utilizem seus resultados para tomar decisões de negócios mais informadas. A utilização da plataforma Heroku facilita o processo de implantação e disponibilização da API em um ambiente de nuvem confiável e escalável.
 
+***Passo 11 - Bot do Telegram:***
+
+Na etapa final do projeto, foi desenvolvido um bot no aplicativo de mensagens Telegram, permitindo que os usuários consultem as previsões a qualquer momento e em qualquer lugar. A API criada anteriormente também foi utilizada nessa etapa e hospedada na plataforma Heroku.
+
+Após configurar o bot no Telegram e realizar os testes necessários, tornou-se possível obter as previsões de vendas de cada loja em tempo real, simplesmente utilizando o comando "/id da loja". Essa integração permite que os usuários tenham acesso imediato às informações de vendas previstas para uma loja específica, fornecendo uma interface intuitiva e conveniente.
+
+O uso do Telegram como plataforma de comunicação para o bot oferece uma experiência de usuário acessível e amplamente utilizada, permitindo que os stakeholders do projeto consultem as previsões de vendas de forma rápida e conveniente, diretamente em seus dispositivos móveis ou desktops.
+
+Essa funcionalidade adicional proporcionada pelo bot do Telegram aumenta a usabilidade do modelo de previsão de vendas desenvolvido, facilitando o acesso às informações e auxiliando na tomada de decisões estratégicas. Ao combinar a API hospedada no Heroku com a interação por meio do Telegram, o projeto é capaz de fornecer um serviço abrangente e de fácil acesso aos usuários interessados nas previsões de vendas das lojas.
+
+***Demonstração do funcionamento do bot do telegram***
+![bot-telegram](img/telegram2.jpg)
+
 # 3 - INSIGHTS E RESULTADOS
 
 # 4 -  CONCLUSÃO
