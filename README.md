@@ -86,6 +86,71 @@ Adicionalmente, as features (variáveis) foram ordenadas de acordo com sua relev
 ***Matriz de Confusão***
 ![Matriz de Confusão](img/matriz-confusao.png)
 
+***Passo 05 - Preparação dos dados:***
+
+Nesta etapa, o objetivo principal foi selecionar os atributos mais relevantes para o treinamento do modelo. Para alcançar esse objetivo, foi empregado o algoritmo Boruta, uma técnica amplamente utilizada em ciência de dados. O algoritmo Boruta realizou a seleção das variáveis, destacando aquelas que apresentaram maior relevância para o fenômeno em estudo.
+
+O algoritmo Boruta é uma abordagem baseada em técnicas de Random Forest, que avalia a importância das variáveis através de um processo iterativo. Ele compara o desempenho das variáveis originais com versões aleatórias (chamadas de sombras) e identifica quais variáveis possuem um desempenho estatisticamente superior. Dessa forma, o Boruta pode ajudar a identificar as variáveis mais relevantes, fornecendo insights sobre quais características têm maior influência nos resultados do modelo.
+
+No entanto, é importante ressaltar que, em alguns casos, certas features criadas manualmente durante a etapa de Feature Engineering podem ter sido consideradas relevantes, mesmo que o algoritmo Boruta não as tenha selecionado. Portanto, essas features foram incluídas manualmente, reconhecendo seu potencial contributivo para o modelo, mesmo que não tenham sido destacadas pelo algoritmo Boruta.
+
+***Passo 07 - Modelagem de Machine Learning:***
+
+Na modelagem foram realizados os treinamentos dos modelos de machine learning selecionados para o problema em questão:
+
+- Average Model
+- Linear Regression
+- Linear Regression Regularized (Lasso)
+- Random Forest Regressor
+- XGBoost Regressor
+
+ Na primeira parte da etapa foi realizado a avaliação simples do modelo (Single Performance) e na segunda parte foi aplicado o método de Cross Validation (Real Performance). O método de validação cruzada consiste em separar os dados de teste em dois conjuntos: conjunto de teste e o menor de validação, após treinar e medir o desempenho do modelo esses dois conjuntos são redimensionados de forma a testar e validar o modelo em todas as porções dos dados.
+
+Single Performance:
+| Model Name |	MAE	MAPE |	RMSE |
+|	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
+|	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
+|	Linear Regression |	1867.089774	0.292694	2671.049215 |
+|	Linear Regression - Lasso |	1891.704881 |	0.289106 |	2744.451737 |
+|	XGboost Regressor |	6685.509529 |	0.949034 |	7337.089204 |
+
+Cross Validation Performance
+| Model Name |	MAE CV |	MAPE CV |	RMSE CV |
+|	Linear Regression |	2081.73 +/- 295.63 |	0.3 +/- 0.02 |	2952.52 +/- 468.37 |
+|	Lasso |	2116.38 +/- 341.5 |	0.29 +/- 0.01 |	3057.75 +/- 504.26 |
+|	Random Forest Regressor |	836.61 +/- 217.1 |	0.12 +/- 0.02 |	1254.3 +/- 316.17 |
+|	XGBoost Regressor |	7053.23 +/- 594.13 |	0.95 +/- 0.0 |	7724.0 +/- 695.19 |
+
+Dentre os modelos testados, apesar de parecer contraditório, a escolha do modelo XGBoost foi baseado, entre outros fatores menores, no tempo de processamento do algoritmo, que é muito menor que o Random Forest, significando redução de custos de processamento e cloud. Além de que na etapa de Hyperparameter Fine Tuning será possível fazer ajustes significativos para melhora da performance.
+
+
+Na fase de modelagem, foram conduzidos treinamentos dos modelos de machine learning selecionados para resolver o problema em questão. Dentre os modelos utilizados estavam o Average Model, Linear Regression, Linear Regression Regularizada (Lasso), Random Forest Regressor e XGBoost Regressor.
+
+Inicialmente, foi realizada uma avaliação simples do desempenho dos modelos, conhecida como "Single Performance". Em seguida, foi aplicado o método de Cross Validation (Validação Cruzada) para obter uma avaliação mais robusta, também chamada de "Real Performance".
+
+A técnica de Cross Validation é amplamente utilizada em problemas de ciência de dados, especialmente em casos de séries temporais. Ela consiste em dividir os dados em conjuntos de treinamento, teste e validação. No entanto, ao contrário da divisão tradicional em conjunto de treinamento e teste, a validação cruzada envolve a criação de múltiplos conjuntos de treinamento e teste, permitindo que cada porção dos dados seja usada como conjunto de teste em algum momento.
+
+Essa abordagem é particularmente importante em problemas de séries temporais, onde a ordem dos dados é relevante. A validação cruzada nos permite avaliar o desempenho do modelo em diferentes períodos de tempo, o que ajuda a verificar se o modelo é capaz de generalizar bem e fazer previsões precisas em diferentes momentos.
+
+Na tabela de "Single Performance", podemos observar as métricas de desempenho (MAE, MAPE e RMSE) para cada modelo individualmente. Já na tabela de "Cross Validation Performance", são apresentadas as métricas resultantes da aplicação do método de validação cruzada, com intervalos de confiança, representando a variabilidade do desempenho do modelo em diferentes divisões dos dados.
+
+Single Performance:
+| Model Name |	MAE	MAPE |	RMSE |
+|	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
+|	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
+|	Linear Regression |	1867.089774	0.292694	2671.049215 |
+|	Linear Regression - Lasso |	1891.704881 |	0.289106 |	2744.451737 |
+|	XGboost Regressor |	6685.509529 |	0.949034 |	7337.089204 |
+
+Cross Validation Performance
+| Model Name |	MAE CV |	MAPE CV |	RMSE CV |
+|	Linear Regression |	2081.73 +/- 295.63 |	0.3 +/- 0.02 |	2952.52 +/- 468.37 |
+|	Lasso |	2116.38 +/- 341.5 |	0.29 +/- 0.01 |	3057.75 +/- 504.26 |
+|	Random Forest Regressor |	836.61 +/- 217.1 |	0.12 +/- 0.02 |	1254.3 +/- 316.17 |
+|	XGBoost Regressor |	7053.23 +/- 594.13 |	0.95 +/- 0.0 |	7724.0 +/- 695.19 |
+
+Com base nas métricas de desempenho e considerando outros fatores, como o tempo de processamento, foi tomada a decisão de escolher o modelo XGBoost. Apesar do tempo de processamento menor em comparação ao Random Forest, o XGBoost apresentou um desempenho aceitável e a possibilidade de ajustes significativos na etapa de Hyperparameter Fine Tuning para melhorar ainda mais sua performance. Além disso, a escolha do XGBoost também levou em consideração a redução de custos de processamento e armazenamento em nuvem.
+
 # 3 - INSIGHTS E RESULTADOS
 
 # 4 -  CONCLUSÃO
