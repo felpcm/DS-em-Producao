@@ -108,14 +108,16 @@ Na modelagem foram realizados os treinamentos dos modelos de machine learning se
 
 Single Performance:
 | Model Name |	MAE	MAPE |	RMSE |
+|  --- | --- | --- | --- |
 |	Random Forest Regressor |	679.598831 |	0.099913 |	1011.119437 |
 |	Average Model |	1354.800353 |	0.206400 | 1835.135542 |
 |	Linear Regression |	1867.089774	0.292694	2671.049215 |
 |	Linear Regression - Lasso |	1891.704881 |	0.289106 |	2744.451737 |
 |	XGboost Regressor |	6685.509529 |	0.949034 |	7337.089204 |
 
-Cross Validation Performance
+Real Performance:
 | Model Name |	MAE CV |	MAPE CV |	RMSE CV |
+|  --- | --- | --- | --- |
 |	Linear Regression |	2081.73 +/- 295.63 |	0.3 +/- 0.02 |	2952.52 +/- 468.37 |
 |	Lasso |	2116.38 +/- 341.5 |	0.29 +/- 0.01 |	3057.75 +/- 504.26 |
 |	Random Forest Regressor |	836.61 +/- 217.1 |	0.12 +/- 0.02 |	1254.3 +/- 316.17 |
