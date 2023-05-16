@@ -180,7 +180,26 @@ Além disso, é apresentada uma tabela que representa a amostra do desempenho to
 | worst_scenario |	$259,103,458.74 |
 | best_scenario |	$310,170,585.45 |
 
+***Previsão x Vendas reais***
+![graficops](img/predxsell.png)
+
 Esses valores fornecem uma visão geral do desempenho do modelo, considerando diferentes cenários, e são úteis para a equipe de negócios avaliar o impacto das previsões no contexto financeiro.
+
+***Passo 10 - Deploy do modelo em produção:***
+
+Após o êxito na execução do modelo, o próximo passo é publicá-lo em um ambiente de nuvem, permitindo que outras pessoas ou serviços utilizem os resultados para aprimorar as decisões de negócios. Nesse caso, a escolha foi criar uma API utilizando a plataforma de nuvem Heroku. Os seguintes passos foram seguidos para realizar essa tarefa:
+
+1. Salvamento do modelo treinado: O modelo, já treinado e ajustado com os hiperparâmetros finais, é salvo para que não seja necessário realizar esse processo no ambiente de produção. Dessa forma, o modelo pode ser carregado diretamente na API sem a necessidade de repetir todo o processo de treinamento.
+
+2. Criação de uma classe encapsuladora: Uma classe é criada com métodos para limpeza, transformação, codificação e predição dos dados. Essa classe é responsável por encapsular o funcionamento do aplicativo, fornecendo uma interface simplificada para o processamento dos dados de entrada e obtenção das previsões do modelo.
+
+3. Desenvolvimento de uma aplicação em Flask: É criada uma aplicação utilizando o framework Flask, que atua como o controlador da arquitetura da API. Essa aplicação recebe as requisições dos usuários, encaminha os dados para o modelo processar e retorna as respostas por meio de uma resposta (response) apropriada.
+
+4. Estruturação das pastas e arquivos de configuração: A estrutura de diretórios necessária para a aplicação é criada, juntamente com os arquivos de configuração relevantes. Esses arquivos incluem informações como as dependências do projeto, configurações de ambiente e demais detalhes necessários para o correto funcionamento da API.
+
+5. Publicação na plataforma Heroku: Após a conclusão dos passos anteriores, a aplicação é publicada na plataforma de nuvem Heroku. Isso envolve o envio dos arquivos e configurações para a ferramenta de cloud e a configuração adequada do ambiente para hospedar e disponibilizar a API.
+
+Esses passos permitem que o modelo treinado seja acessado de forma rápida e eficiente por meio da API, possibilitando que outras pessoas ou serviços utilizem seus resultados para tomar decisões de negócios mais informadas. A utilização da plataforma Heroku facilita o processo de implantação e disponibilização da API em um ambiente de nuvem confiável e escalável.
 
 # 3 - INSIGHTS E RESULTADOS
 
