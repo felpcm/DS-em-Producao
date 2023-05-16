@@ -212,7 +212,7 @@ O uso do Telegram como plataforma de comunicação para o bot oferece uma experi
 Essa funcionalidade adicional proporcionada pelo bot do Telegram aumenta a usabilidade do modelo de previsão de vendas desenvolvido, facilitando o acesso às informações e auxiliando na tomada de decisões estratégicas. Ao combinar a API hospedada no Heroku com a interação por meio do Telegram, o projeto é capaz de fornecer um serviço abrangente e de fácil acesso aos usuários interessados nas previsões de vendas das lojas.
 
 ***Demonstração do funcionamento do bot do telegram***
-![bot-telegram](img/telegram.PNG)
+![bot-telegram](img/telegram2.jpg)
 
 # 3 - INSIGHTS E RESULTADOS
 
