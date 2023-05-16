@@ -203,7 +203,7 @@ Esses passos permitem que o modelo treinado seja acessado de forma rápida e efi
 
 ***Passo 11 - Bot do Telegram:***
 
-Na etapa final do projeto, foi desenvolvido um bot no aplicativo de mensagens Telegram, permitindo que os usuários consultem as previsões a qualquer momento e em qualquer lugar. A API criada anteriormente também foi utilizada nessa etapa e hospedada na plataforma Heroku.
+Na etapa final do projeto, foi desenvolvido um bot no aplicativo de mensagens Telegram, permitindo que os usuários consultem as previsões a qualquer momento e em qualquer lugar. A API criada nessa etapa também foi utilizada e hospedada na plataforma Heroku.
 
 Após configurar o bot no Telegram e realizar os testes necessários, tornou-se possível obter as previsões de vendas de cada loja em tempo real, simplesmente utilizando o comando "/id da loja". Essa integração permite que os usuários tenham acesso imediato às informações de vendas previstas para uma loja específica, fornecendo uma interface intuitiva e conveniente.
 
@@ -215,6 +215,14 @@ Essa funcionalidade adicional proporcionada pelo bot do Telegram aumenta a usabi
 
 ![bot-telegram](img/telegram2.jpg)
 
-# 3 - INSIGHTS E RESULTADOS
-
 # 4 -  CONCLUSÃO
+
+O projeto foi concluído com sucesso, alcançando o objetivo de projetar as vendas das próximas semanas e fornecer informações precisas para auxiliar o CFO na estimativa do orçamento das lojas. Agora, o CFO tem a capacidade de consultar em tempo real cada previsão de vendas, permitindo uma tomada de decisão embasada em dados reais.
+
+O modelo desenvolvido e a aplicação do Bot do Telegram foram implantados no ambiente em nuvem do Heroku e estão totalmente funcionais, prontos para uso. Essa infraestrutura na nuvem oferece escalabilidade e disponibilidade para atender às demandas em tempo real, permitindo que o modelo seja acessado e consultado de maneira rápida e eficiente.
+
+A documentação completa do projeto está disponível no repositório, incluindo os notebooks de desenvolvimento e todos os scripts finais utilizados nas aplicações web. Essa documentação serve como um recurso valioso para entender as etapas e o processo de construção do projeto, bem como para referência futura.
+
+Para os próximos passos, uma possibilidade é iniciar um segundo ciclo do CRISP para analisar o problema com base na experiência adquirida durante o desenvolvimento do pipeline. Isso envolve uma abordagem iterativa para buscar novas perspectivas e aprimoramentos. Alguns pontos específicos que podem ser revisados incluem a implementação de uma nova abordagem para tratar dados faltantes, explorar diferentes métodos de rescaling e encoding, formular novas hipóteses, criar ou derivar novas features, utilizar métodos mais robustos para seleção dos melhores hiperparâmetros e testar diferentes algoritmos de Machine Learning. Essas abordagens podem levar a melhorias significativas no desempenho e precisão das previsões.
+
+Em resumo, o repositório contém todo o código relacionado à previsão de vendas da rede de drogarias Rossmann. Os dados utilizados estão disponíveis no Kaggle, e todas as informações adicionais foram criadas para fornecer contexto ao problema e ao projeto como um todo. O projeto concluído representa um marco importante na aplicação de técnicas de ciência de dados para previsão de vendas e contribui para a tomada de decisões estratégicas da empresa.
