@@ -55,18 +55,27 @@ Seguindo a metodologia CRISP-DS a seguinte sequência de tarefas foram realizada
 
 ***Passo 01 - Descrição dos dados:***
 
-Esta etapa consiste em conhecer os dados (dataset) e suas dimensões. É verificado também quais os tipos de variáveis estão presentes no dataset (numéricas, categóricas, temporais) e também os dados faltantes e suas motivações, pois estes podem inviabilizar a continuidade projeto. Foi feito também uma análise descritiva dos dados para mensurar média, moda, mediana, desvio padrão, range, para assim ter uma noção de grandeza e limites dos dados. Com todas essas informações é possível aplicar as técnicas corretas para manipular os dados a fim de que o desenvolvimento flua.
+Essa etapa do projeto envolve a exploração e compreensão dos dados (dataset) e suas características. É realizado um processo de investigação para identificar as dimensões do dataset, os tipos de variáveis presentes (numéricas, categóricas, temporais) e a presença de dados faltantes, uma vez que esses dados ausentes podem impactar a viabilidade do projeto. Além disso, uma análise descritiva dos dados é realizada para obter medidas estatísticas como média, moda, mediana, desvio padrão e amplitude, a fim de ter uma compreensão geral sobre a escala e os limites dos dados. Essas informações são fundamentais para determinar as técnicas adequadas de manipulação e pré-processamento dos dados, visando garantir um desenvolvimento fluido do projeto.
 
-Em linhas gerais, foram identificados e substituídos as linhas com dados faltantes, foi feito um check para saber o tipo dado era correto para cada uma das colunas e depois foi resumido todo o conteúdo do dados em uma tabela utilizando técnicas da estatística descritiva.
+Em termos mais técnicos, durante essa etapa, foram identificadas as linhas contendo dados faltantes e realizada a substituição desses valores ausentes. Também foi verificado se o tipo de dado atribuído a cada coluna estava correto por meio de uma verificação de consistência. Em seguida, foi elaborada uma tabela resumindo o conteúdo do dataset, utilizando técnicas estatísticas descritivas. Essa tabela fornece uma visão geral dos principais indicadores estatísticos dos dados, permitindo uma compreensão mais aprofundada de suas características.
+
+Essa análise exploratória inicial dos dados é crucial para estabelecer uma base sólida para o restante do projeto. Ela proporciona insights valiosos sobre os dados e direciona as próximas etapas de pré-processamento, modelagem e avaliação do modelo.
 
 ***Passo 02 - Feature Engineering:***
 
-Nesta etapa a ideia principal é derivar features a partir do conjunto original de variáveis, assim, teremos as variáveis disponíveis para estudo durante a etapa de Análise Exploratória de Dados. Para isso, foi criado um mapa que serve como um roteiro para mostrar quais variáveis precisamos derivar para fazer determinadas análises através de uma lista empírica de hipóteses. Então a lista é analisada para validar ou descartar de cada uma dessas hipóteses, gerando, assim, insights para o projeto.
+Nesta etapa do projeto, o foco principal é derivar novas variáveis (features) a partir do conjunto original de variáveis disponíveis. Isso nos permitirá ter um conjunto mais abrangente de variáveis para análise durante a etapa de Análise Exploratória de Dados. Para isso, foi desenvolvido um mapa mental que serve como um guia para identificar quais variáveis precisam ser derivadas a fim de realizar análises específicas, com base em uma lista de hipóteses empíricas.
 
-Vale ressaltar quais são os três elementos que constituem o mapa mental de hipósteses:
-- FENÔMENO -> Aquilo que está sendo medido ou modelado (ex.: vendas)
-- AGENTES -> Entidades que impactam o fenômeno (ex.: clientes, lojas, produtos)
-- ATRIBUTOS DO AGENTE -> São os atributos que descrevem o agente (ex.: para o agente "cliente" temos os atributos idade, escolaridade, salário, etc.)
+Esse mapa mental é composto por três elementos principais:
+
+1. FENÔMENO: Refere-se ao aspecto que está sendo medido ou modelado no contexto do projeto, por exemplo, as vendas.
+
+2. AGENTES: Representam as entidades que impactam o fenômeno em estudo. Podem ser clientes, lojas, produtos ou outros elementos relevantes para o projeto.
+
+3. ATRIBUTOS DO AGENTE: São os atributos que descrevem as características dos agentes. Por exemplo, no caso dos clientes, podem incluir atributos como idade, escolaridade, salário, entre outros.
+
+Utilizando esse mapa mental, é possível analisar e validar cada uma das hipóteses relacionadas aos agentes e seus atributos. Isso resulta na geração de insights valiosos para o projeto, pois permite identificar quais variáveis são relevantes e devem ser derivadas para uma análise mais aprofundada.
+
+É importante destacar que esse processo de derivação de features com base no mapa de hipóteses contribui para enriquecer o conjunto de dados, fornecendo informações adicionais que podem ser exploradas nas etapas subsequentes do projeto, como modelagem e avaliação de modelos preditivos.
 
 ***Mapa Mental de Hipóteses***
 ![MAPA MENTAL DE HIPÓTESES](img/MindMapHypothesis.png)
