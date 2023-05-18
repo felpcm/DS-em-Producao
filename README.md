@@ -43,7 +43,9 @@ As seguintes features são encontradas no dataset:
 
 ## 2.1 - Planejamento da Solução
 
-Para o desenvolvimento do projeto foi utilizada um processo cíclico chamado CRISP-DS (Cross-Industry Standard Process - Data Science). A ideia principal é percorrer as fases do processo, para que você tenha, de forma ágil, um produto mínimo viável a agregar ao negócio. Depois de percorrer o primeiro ciclo, você pode iterar novamente, encontrar novos insights, criar novas features, melhorar o modelo, ajustar parâmetros, a fim de a precisão e entregar mais valor. O ciclo pode ser repetido quantas vezes forem necessárias até atingir o objetivo final do time de negócio.
+O projeto utiliza o processo CRISP-DS (Cross-Industry Standard Process - Data Science), que é um ciclo iterativo composto por várias etapas. O objetivo é entregar um Produto Mínimo Viável que agregue valor ao negócio de forma ágil. Através de iterações, é possível obter insights, criar novas features, melhorar o modelo e ajustar parâmetros para aumentar a precisão e atingir os objetivos estabelecidos. O processo é repetido quantas vezes forem necessárias, permitindo a evolução contínua do projeto e a adaptação às necessidades do time de negócio.
+
+O CRISP-DS oferece uma abordagem sistemática e organizada para o desenvolvimento do projeto de ciência de dados. Com foco na geração de valor e na obtenção de insights relevantes, as etapas são realizadas de maneira estruturada, garantindo uma progressão eficiente rumo ao objetivo final.
 
 ***Etapas do método CRISP-DS***
 ![CRISP-DS](img/crisp-ds.jpg)
